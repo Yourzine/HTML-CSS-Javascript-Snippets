@@ -3,14 +3,14 @@ Google Schemas for Gmail and Google Inbox
 
 -- STATUS --
 
-/* 8-12-2014 */
+08-12-2014 --
 De toepassingen zijn nog volop in ontwikkeling. En werken nog niet allemaal overal.
 Het reviewen werkt bijvoorbeeld wel in Gmail maar niet in Google Inbox.
 
 
 -- TOEGANKELIJKHEID --
 
-Google moet iedere mailserver die gebruik wil maken van Schemas eerst toevoegen, testen kan alleen naar je eigen g-mailadres
+Google moet iedere mailserver die gebruik wil maken van Schemas eerst toevoegen, testen kan alleen naar je eigen g-mail account
 
 -- INTRODUCTIE / OVER --
 
