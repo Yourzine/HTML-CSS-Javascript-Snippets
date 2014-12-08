@@ -8,6 +8,21 @@ De toepassingen zijn nog volop in ontwikkeling. En werken nog niet allemaal over
 Het reviewen werkt bijvoorbeeld wel in Gmail maar niet in Google Inbox.
 
 
+-- TOELICHTING VOOBEELDEN --
+
+De voorbeelden zijn scripts waarmee ik heb getest in Google Scripts (ja dat hebben ze ook al).
+In Code.gs heb ik functies aangemaakt die ik kon runnen om de bijbehorende mail te openen. 
+Het zijn slechts enkele praktijk voorbeelden. Daarnaast zijn er natuurlijk nog heel veel mogelijkheden te verzinnen afhankelijk van de wensen van de klant.
+
+
+-- IDEEËN VOOR TOEPASSING --
+
+- Direct printen -> Een actieknop in de e-mail die naar een pagina verwijst die is klaargezet voor een direct print
+- Reserveringsbevestiging - Bijvoorbeeld voor Pathé, die standaard een mail verzendt om een reservering te bestellen. Door dit voor schema's toe te voegen kan de klant ook een herinnering krijgen via Google Now 
+- Afleveringbevestiging - Kan voor klanten als HEMA, V&D, IKEA, Etos etc. handig zijn
+- Bevestig dubbele optin - Actieknop waarmee de dubbele optin direct bevestigd word. Bijvoorbeeld voor Duitsland
+- Afspraakbevestiging - Voor klanten die persoonlijke afspraken maken. Door deze handeling krijgt de gebruiker ook een herinnering in Google Now en zijn Google Agenda 
+
 -- TOEGANKELIJKHEID --
 
 Google moet iedere mailserver die gebruik wil maken van Schemas eerst toevoegen, testen kan alleen naar je eigen g-mail account
