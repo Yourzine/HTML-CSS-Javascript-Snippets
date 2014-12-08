@@ -1,0 +1,43 @@
+<!-- Deze functie werkt nog niet in Google Inbox alleen in Gmail in de browser. (Dus ook nog geen Google Now)  -->
+
+<html>
+  <body>
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "EmailMessage",
+  "action": {
+    "@type": "ReviewAction",
+    "review": {
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "Movie",
+        "name": "Horrible Bosses 2"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    "handler": {
+      "@type": "HttpActionHandler",
+      "url": "http://reviews.com/review?id=123",
+      "requiredProperty": {
+        "@type": "Property",
+        "name": "review.reviewRating.ratingValue"
+      },
+      "method": "http://schema.org/HttpRequestMethod/POST"
+    }
+  },
+  "description": "Hoe was de film?"
+}
+</script>
+    <p>
+      Beste Lars,
+    </p>
+    <p>
+      Je hebt vorige week Horrible Bosses 2 gekeken bij Pathe Eindhoven. Laat ons nu weten hoe je de film vond
+    </p>
+  </body>
+</html>

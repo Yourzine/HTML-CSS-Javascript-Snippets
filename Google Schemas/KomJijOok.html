@@ -1,0 +1,61 @@
+<html>
+  <body>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Event",
+  "name": "Spelletjes dag",
+  "image": "http://www.despellenkast.nl/despellenkast/images/site/logo.png",
+  "startDate": "2014-12-12T17:00:00Z",
+  "endDate": "2014-12-12T21:00:00Z",
+  "location": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "name": "Yourzine klantcafé",
+      "streetAddress": "Prins Bernhardstraat 14",
+      "addressLocality": "Den Bosch",
+      "addressRegion": "NB",
+      "postalCode": "5211 HE",
+      "addressCountry": "NL"
+    }
+  },
+  "action": [
+    {
+      "@type": "RsvpAction",
+      "handler": {
+        "@type": "HttpActionHandler",
+        "url": "http://mysite.com/rsvp?eventId=123&value=yes"
+      },
+      "attendance": "http://schema.org/RsvpAttendance/Yes"
+    },
+    {
+      "@type": "RsvpAction",
+      "handler": {
+        "@type": "HttpActionHandler",
+        "url": "http://mysite.com/rsvp?eventId=123&value=no"
+      },
+      "attendance": "http://schema.org/RsvpAttendance/No"
+    },
+    {
+      "@type": "RsvpAction",
+      "handler": {
+        "@type": "HttpActionHandler",
+        "url": "http://mysite.com/rsvp?eventId=123&value=maybe"
+      },
+      "attendance": "http://schema.org/RsvpAttendance/Maybe"
+    }
+  ]
+}
+</script>
+    <p>
+      Beste Lars,
+    </p>
+    <p>
+      Spelletjesavond! Komen jij ook?
+    </p>
+  </body>
+</html>
+
+
+
