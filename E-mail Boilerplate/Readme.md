@@ -1,6 +1,6 @@
 Mobile responsive fluid boilerplate - v1.1 
 
-Deze boilerplate bevat veel gebruikte elementen welke allemaal mobiel-geoptimaliseerd en Gmail-app-compatible zijn, zonder het gebruik van Mediaqueries. In deze eerste versie diverse veelvoorkomende blokken en wat exotische elementen: 
+Deze boilerplate bevat veel gebruikte elementen welke allemaal mobiel-geoptimaliseerd en Gmail-compatible zijn, zonder het gebruik van Mediaqueries. Je kunt natuurlijk gewoon Mediaqueries gebruiken indien gewenst. In deze eerste versie diverse veelvoorkomende blokken en wat exotische elementen:
 
 - Basis wrapper structuur met alle benodigde optimalisaties 
 - Custom fonts 
