@@ -74,11 +74,16 @@ img[src$=".jpg"],img[src$=".gif"], img[src$=".png"] {
 image-rendering: optimizeQuality;
 -ms-interpolation-mode: bicubic;
 }
-/* hier kun je mobiele optimalisaties doorvoeren */
-@media only screen and (max-width: 599px) {
 
+/* Hier kun je mobiele optimalisaties doorvoeren */
+
+@media only screen and (max-width: 599px) {
+[class~="..."] {
+	
 }
+
 /* Container fix m.b.t. Gmail-desktop */
+
 @media screen and (min-width:621px) {
 .container {
 width: 620px !important;
