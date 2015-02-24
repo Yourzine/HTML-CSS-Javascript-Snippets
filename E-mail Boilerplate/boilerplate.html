@@ -108,7 +108,7 @@ tr { font-size:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; }
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="container" style="max-width: 620px;">
 <tr>
 
-<!-- Als de witruimte om de tekst heen wil op je mobiledevice, moet je altijd aan de linker en rechterkant een spacer-TD gebruiken. Aangezien je geen mediaqueries kunt gebruiken forceer je zo ten alle tijden ruimte aan de zijkant, ongeacht je device. -->
+<!-- Als de witruimte om de tekst heen wil op je mobiledevice, moet je altijd aan de linker en rechterkant een spacer-TD gebruiken. Aangezien j bijvoorbeelde geen mediaqueries wil gebruiken t.b.v. de Gmail-app forceer je zo ten alle tijden ruimte aan de zijkant, ongeacht je device en client. -->
 
 <td width="10"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="10" height="1"/></td>
 
@@ -116,12 +116,9 @@ tr { font-size:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; }
 
 <!-- deze Div hieronder is zeer flexibel in te zetten en zorgt in alle e-mailclients voor een nagenoeg gelijke ruimte tussen teksten. Deze is consistenter dan de <BR> tag en voorkomt dat je onnodig veel <TR> regels toe moet voegen. Hoewel je wel creatief om moet gaan met de line-height van bovenliggende teksten (deze ruimte komt er een beetje bij) is dit in mijn optiek de beste manier voor consistente ruimtes tussen de tekst.-->
 
-<div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;">
-
-<img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/>
-</div>
+<div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
 <span style="font-size:26px; line-height:32px; color:#1a1919;" valign="top">
-<strong>Versie 1.1 van de mobile responsive fluid template (geen mediaqueries).  </strong>
+<strong>Mobile responsive fluid boilerplate</strong> - v1.1
 </span>
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;">
 <img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
@@ -152,7 +149,7 @@ HTML button met een border-radius, een gradient als achtergrond welke prima werk
 
 De button werkt overigens overal, enkel in Litmus 8.5 zul je een link zien. In Outlook 2003 heb je geen border-radius. 
 
-Let op dat de breedte niet variabel is en je deze dus hard erin moet zetten in zowel de fallback als de div style.
+Let op dat de breedte niet variabel is en je deze dus hard erin moet zetten in zowel de fallback als de div style. Wellicht een verbeterpunt voor wanneer iemand tijd heeft?
 
 -->
 
@@ -185,7 +182,7 @@ style="background-color:#ad00ff;background-image:url(http://development.yourzine
 <tr>
 <td width="10"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="10" height="1"/></td>
 
-<!-- de onderstaande TD heeft een text-align 'center' zodat de div-blokken hieronder gecentreerd worden in de Gmail-app. Deze kun je ook op 'left' zetten wanneer je geen gecentreerde blokken wil -->
+<!-- de onderstaande TD heeft een text-align 'center' zodat de div-blokken hieronder ook gecentreerd worden in de Gmail-app . Deze kun je ook op 'left' zetten wanneer je geen gecentreerde blokken wil -->
 
 <td style="text-align: center; vertical-align: top; font-size: 0;">
 <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]-->
@@ -237,9 +234,6 @@ style="background-color:#ad00ff;background-image:url(http://development.yourzine
 
 <td style="text-align: center; vertical-align: top; font-size: 0;">
 <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]-->
-
-<!-- De DIV blokken spreken eigen voor zich. Je geeft hier een harde waarde in mee maar laat wel wat ruimte over m.b.t. ruimte tussen de twee DIV blokken in. Daarnaast moet je creatief zijn als je bijvoorbeeld zowel boven als onder een extra ruimte wil. Dat zit in dit voorbeeld al ingebouwd. -->
-
 <div style="width: 300px; display: inline-block; vertical-align: top;" >
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width: 290px; max-width: 290px;">
 <tr>
@@ -488,15 +482,12 @@ Dynamische Google-maps/streetview afbeeldingen, inclusief PNG overlay. Kan op ba
 
 <td style="text-align: center; vertical-align: top; font-size: 0;">
 <!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]-->
-
-<!-- De DIV blokken spreken eigen voor zich. Je geeft hier een harde waarde in mee maar laat wel wat ruimte over m.b.t. ruimte tussen de twee DIV blokken in. Daarnaast moet je creatief zijn als je bijvoorbeeld zowel boven als onder een extra ruimte wil. Dat zit in dit voorbeeld al ingebouwd. -->
-
 <div style="width: 300px; display: inline-block; vertical-align: top;">
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width: 290px; max-width: 290px;">
 <tr>
 <td style="font-family: 'quicksandregular', Arial, sans-serif; font-size:17px; line-height:28px; color:#585858; text-align:left;" valign="top">
 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. <br />
-The point of using <a href="#" target="_blank">Lorem Ipsum</a> is that it has a more-or-less normal distribution of letters.</td>
+The point of using <a href="#" target="_blank" style="color:#585858;">Lorem Ipsum</a> is that it has a more-or-less normal distribution of letters.</td>
 </tr>
 <tr>
 <td height="15"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></td>
