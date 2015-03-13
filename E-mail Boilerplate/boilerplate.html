@@ -78,8 +78,8 @@ image-rendering: optimizeQuality;
 /* Hier kun je mobiele optimalisaties doorvoeren */
 
 @media only screen and (max-width: 599px) {
-[class~="..."] {
-	
+[class~="hide"] {
+	display:none !important;
 }
 
 /* Container fix m.b.t. Gmail-desktop */
@@ -87,6 +87,87 @@ image-rendering: optimizeQuality;
 @media screen and (min-width:621px) {
 .container {
 width: 620px !important;
+}
+}
+
+/* Alle CSS voor het hamburger-menu */
+@media all and ( max-width: 599px )
+{
+
+*[class].menu
+{
+min-width: 0 !important;
+-moz-text-size-adjust: none;
+-ms-text-size-adjust: none;
+-webkit-text-size-adjust: none;
+width: 100% !important;
+}
+
+*[id]#mobile-label
+{
+background-color: #F3F3F3;
+
+cursor: pointer;
+display: block !important;
+float: right;
+padding: 25px;
+-webkit-tap-highlight-color: transparent;
+width: 26px;
+}
+
+*[id]#mobile-label > b
+{
+background-color: #575452;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+display: block;
+height: 4px;
+}
+
+*[id]#mobile-label > b + b
+{
+margin-top: 4px;
+}
+
+*[class].menu td
+{
+padding: 0 !important;
+}
+
+*[id]#menu-wrapper
+{
+background-color: #004677;
+max-height: 0;
+overflow: hidden;
+-moz-transition: max-height .25s linear;
+-ms-transition: max-height .25s linear;
+-o-transition: max-height .25s linear;
+-webkit-transition: max-height .25s linear;
+transition: max-height .25s linear;
+}
+
+*[id]#mobile-checkbox:checked + table #menu-wrapper
+{
+max-height: 130px;
+}
+
+*[class].menu + .menu
+{
+border-top: 1px solid #7C90AF;
+}
+
+*[class].menu-item
+{
+color: #FFFFFF !important;
+display: block;
+padding: 12px;
+text-align: center;
+}
+
+*[class].mobile-hide
+{
+display: none;
 }
 }
 </style>
@@ -102,6 +183,91 @@ tr { font-size:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; }
 <body>
 
 <!-- Alle blokken zitten in hun eigen wrapper. Dit heeft heel veel voordelen tijdens het developen / het doorvoeren van wijzigingen en voorkomt terugkomende problemen in Gmail en Outlook. -->
+
+<div id="wrapper" style="background-color: #FFFFFF; vertical-align:middle"">
+            <table class="wrapper" bgcolor="#ffffff" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+
+<!-- Iedere containertabel heeft een Outlookfallback nodig voor een correcte weergave. Hierin staat een harde breedte i.t.t. een procentuele breedte -->
+
+<!--[if (gte mso 9)|(IE)]><table width="620" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]-->
+                    <td valign="middle">
+                        <!--[if mso]><p style="display: none;"><![endif]-->
+                            <input id="mobile-checkbox" style="display: none!important; max-height: 0; visibility: hidden;" type="checkbox">
+                        <!--[if mso]></p><![endif]-->
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="container" style="max-width: 620px;">
+                       
+<tr>
+<td width="10" class="hide"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="10" height="1"/></td>
+                                <td valign="middle">
+                                 <label for="mobile-checkbox" id="mobile-label" style="display: none;">
+                                        <b></b>
+                                        <b></b>
+                                        <b></b>
+                                    </label>
+                                    
+                                    
+                                                                          <table align="left" border="0" cellpadding="10" cellspacing="0" style="border-collapse: collapse; border-spacing: 0;">
+                                        <tr>
+                                            <td valign="middle">
+                                                <a href="http://www.pbccu.coop/"><img src="http://www.yourzine.nl/site/gfx/logo.jpg" align="left"></a>
+                                            </td>
+                                        </tr>
+                                    </table><!--[if mso]>
+                                </td><td><![endif]-->
+                                    <table align="right" border="0" cellpadding="0" cellspacing="0" class="menu">
+                                        <tr>
+                                            <td valign="middle">
+                                                <div id="menu-wrapper"><!--[if mso]>
+                                                    <table border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td><![endif]-->
+                                                                <table align="left" border="0" cellpadding="10" cellspacing="0" class="menu" style="border-collapse: collapse; border-spacing: 0;">
+                                                                    <tr>
+                                                                    
+    
+                                                                        <td nowrap style="font-family:Arial, sans-serif; font-size: 18px; line-height: 1; text-transform: uppercase;">
+                                                                            <a href="#" class="menu-item" style="color: #575452; line-height: 1; text-decoration: none;">lINK 1</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table><!--[if mso]>
+                                                            </td><td><![endif]-->
+                                                                <table align="left" border="0" cellpadding="10" cellspacing="0" class="menu" style="border-collapse: collapse; border-spacing: 0;">
+                                                                    <tr>
+                                                                        <td nowrap style="font-family:Arial, sans-serif; font-size: 18px; line-height: 1; text-transform: uppercase;">
+                                                                            <a href="#" class="menu-item" style="color: #575452; line-height: 1; text-decoration: none;">link 2
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table><!--[if mso]>
+                                                            </td><td><![endif]-->
+                                                                <table align="left" border="0" cellpadding="10" cellspacing="0" class="menu" style="border-collapse: collapse; border-spacing: 0;">
+                                                                    <tr>
+                                                                        <td nowrap style="font-family:Arial, sans-serif; font-size: 18px; line-height: 1; text-transform: uppercase;">
+                                                                            <a href="#" class="menu-item" style="color: #575452; line-height: 1; text-decoration: none;">liNK 3</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table><!--[if mso]>
+                                                            </td>
+                                                        </tr>
+                                                    </table><![endif]-->
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td width="10" class="hide"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="10" height="1"/></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            
+            
+             
+            
+        </div>
+
 
 <table class="wrapper" bgcolor="#ffffff" width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
@@ -123,7 +289,7 @@ tr { font-size:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; }
 
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
 <span style="font-size:26px; line-height:32px; color:#1a1919;" valign="top">
-<strong>Mobile responsive fluid boilerplate</strong> - v1.1
+<strong>Mobile responsive fluid boilerplate</strong> - v1.5
 </span>
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;">
 <img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
@@ -131,8 +297,8 @@ Deze boilerplate bevat veel gebruikte elementen welke allemaal mobiel-geoptimali
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
 - Basis wrapper structuur met alle benodigde optimalisaties
 <br />
-- Custom fonts
-<br />
+- Hamburger menu mobile (animated) <br />
+- Custom fonts <br />
 - Fancy HTML Button.<br />
 - APNG voorbeelden in de template verwerkt
 <br />
