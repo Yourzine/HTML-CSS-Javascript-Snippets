@@ -1,6 +1,4 @@
-<!-- Versie 1.5 Responsive Hybrid Template
-Danny@yourzine.nl -->
-
+<!-- Versie 1.7 - Danny de Kruijk - danny@yourzine.nl -->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -76,6 +74,62 @@ image-rendering: optimizeQuality;
 -ms-interpolation-mode: bicubic;
 }
 
+/* Hieronder staat alle CSS voor de dynamische tabs */
+.headtab1, .headtab2, .headtab3 {
+width: 35px;
+height: 25px;
+margin-bottom: 10px;
+margin-left: 20px;
+background-color: #333333;
+float: left;
+display: inline;
+border: 2px solid #ffffff;
+border-radius: 5px;
+cursor: pointer;
+}
+.headtab1 {
+margin-left: 20px;
+background-color: #ffffff;
+}
+.headtab2 {
+background-color: #ff5a6d;
+}
+#tab1:checked + span .contenttab1, #tab2:checked + span .contenttab2, #tab3:checked + span .contenttab3 {
+display: block !important;
+max-height: none !important;
+height: auto !important;
+}
+/* to add opacity fade in effect */
+.contenttab1 img, .contenttab2 img, .contenttab3 img {
+opacity: 0;
+transition: all 1s ease;
+-webkit-transition: all 1s ease;
+}
+#tab1:checked + span .contenttab1 img, #tab2:checked + span .contenttab2 img, #tab3:checked + span .contenttab3 img {
+opacity: 1;
+}
+#tab1:checked + span .headtab1, #tab2:checked + span .headtab2, #tab3:checked + span .headtab3 {
+height: 25px !important;
+border: 2px solid #aaaaaa;
+}
+form.formcheck .tabcheck:checked + .tabscontainer {
+display: block !important;
+height: 443px !important;
+max-height: 443px !important;
+}
+form.formcheck .tabcheck:checked + .fallback {
+display: none !important;
+display: none;
+max-height: 0px;
+height: 0px;
+overflow: hidden;
+}
+.tab, .tabcheck {
+display: none;
+display: none !important;
+height: 0px;
+visibility: hidden;
+}
 
 /* Container fix m.b.t. Gmail-desktop */
 
@@ -84,6 +138,7 @@ image-rendering: optimizeQuality;
 width: 620px !important;
 }
 }
+
 
 /* Alle CSS voor het hamburger-menu */
 @media all and ( max-width: 599px )
@@ -184,16 +239,9 @@ padding-right: 10px !important;
 {
 display: none;
 }
-
 }
 </style>
-<!-- Voorkomt abnormaal gedrag m.b.t. paddings in Outlook -->
 
-<!--[if gte mso 15]>
-<style type="text/css" media="all">
-tr { font-size:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; }
-</style>
-<![endif]-->
 </head>
 <body>
 
@@ -299,15 +347,14 @@ tr { font-size:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; }
 
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
 <span style="font-size:26px; line-height:32px; color:#1a1919;" valign="top">
-<strong>Mobile responsive fluid boilerplate</strong> - v1.5
+<strong>Mobile responsive fluid boilerplate</strong> - v1.7
 </span>
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;">
 <img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
-Deze boilerplate bevat veel gebruikte elementen welke allemaal mobiel-geoptimaliseerd en Gmail-compatible zijn, zonder het gebruik van Mediaqueries. Je kunt natuurlijk gewoon Mediaqueries gebruiken indien gewenst. In deze eerste versie diverse veelvoorkomende blokken en wat exotische elementen:
-<div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
 - Basis wrapper structuur met alle benodigde optimalisaties
 <br />
-- Hamburger menu mobile (animated) <br />
+- Hamburger menu mobile (animated) <br>
+- Dynamische tabs met content (animated)<br />
 - Custom fonts <br />
 - Fancy HTML Button.<br />
 - APNG voorbeelden in de template verwerkt
@@ -323,9 +370,7 @@ Verder zijn er in de template wat handigheden verwerkt die je altijd kunt gebrui
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
 <em><strong>Zie de comments in de HTML-code voor specifieke uitleg per blok.</strong></em><br />
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
-
 <!-- 
-
 HTML button met een border-radius, een gradient als achtergrond welke prima werkt in Outlook. Hieronder het voorbeeld zoals we hem in CZ gebruiken, inclusief een text-shadow voor de clients die dit ondersteunen. 
 
 De button werkt overigens overal, enkel in Litmus 8.5 zul je een link zien. In Outlook 2003 heb je geen border-radius. 
@@ -695,6 +740,223 @@ The point of using <a href="#" target="_blank" style="color:#585858;">Lorem Ipsu
 </tr>
 <tr>
 <td height="15" bgcolor="#ffffff"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></td>
+</tr>
+</table>
+
+
+<table class="wrapper" bgcolor="#f0f0f0" width="101%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td height="15"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></td>
+</tr>
+<tr>
+<td align="center" valign="top"><!--[if (gte mso 9)|(IE)]><table width="620" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]-->
+  
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="container" style="max-width: 620px;">
+    <tr>
+      <td width="10"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="10" height="1"/></td>
+      
+      
+      <td style="text-align: center; vertical-align: top; font-size: 0;"><!--[if (gte mso 9)|(IE)]><table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]--> 
+
+        <div style="width: 300px; display: inline-block; vertical-align: top;" >
+          <table border="0" align="center" cellpadding="0" cellspacing="0" style="width: 290px; max-width: 290px;">
+            <tr>
+              <td valign="top"><div>
+                  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td><!--[if !mso]><!-- -->
+<form class="formcheck" >
+<input type="radio" class="tabcheck" style="display:none !important;" checked>
+<div class="tabscontainer" style="height:0px;max-height:0px; overflow:hidden;">
+
+<label><input type=radio name="ASIN.1" class="tab" id="tab1" style="display:none !important;" value="B00MUQ9E7C" checked><span><div class="headtab1"></div>
+<label><input type=radio name="ASIN.1" class="tab" id="tab2" style="display:none !important;" value="B00MUQ9DVO"><span><div  class="headtab2"></div>
+
+<label><input type=radio name="ASIN.1" class="tab" id="tab3" style="display:none !important;" value="B00MUQ9DLO"><span><div  class="headtab3"></div>
+<div class="contenttab3" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td style="border:1px solid #888888">
+<img src="http://development.yourzine.nl/ddk/img/template/c1.jpg"
+width="290" height="341" border="0" />
+</td>
+</tr>
+<tr>
+<td width="100%" align="center" valign="top"
+style="padding: 16px; background: #555555; font-family: Helvetica; font-size: 15px; line-height: 100%; color: #ffffff;">
+ZWART
+</td>
+</tr>
+</table>
+</div>
+<div class="contenttab2" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td style="border:1px solid #888888">
+<img src="http://development.yourzine.nl/ddk/img/template/c2.jpg"
+width="290" height="341" border="0" />
+</td>
+</tr>
+<tr>
+<td width="100%" align="center" valign="top"
+style="padding: 16px; background: #555555; font-family: Helvetica; font-size: 15px; line-height: 100%; color: #ffffff;">
+ROOD
+</td>
+</tr>
+</table>
+</div>
+<div class="contenttab1" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td style="border:1px solid #888888">
+<img src="http://development.yourzine.nl/ddk/img/template/c3.jpg"
+width="290" height="341" border="0" />
+</td>
+</tr>
+<tr>
+<td width="100%" align="center" valign="top" style="padding: 16px; background: #555555; font-family: Helvetica; font-size: 15px; line-height: 100%; color: #ffffff;">
+WIT
+</td>
+</tr>
+</table>
+</div>
+</div>
+</form>
+<!--<![endif]-->
+                        
+                        <form class="formcheck">
+                          <!--[if !mso]><!== -->
+<input type="radio" class="tabcheck" style="display:none !important;" checked="checked" /> 
+<!--<![endif]-->
+                          <div class="fallback"> 
+                            <!-- Fallback content -->
+                            
+                            <table width="290" border="0" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td style="font-family: Arial, Helvetica, Sans-serif; font-size:12px; line-height:14px;"> Dit is de fallback, bijvoorbeeld met een gif: </td>
+                              </tr>
+                              <tr>
+                                <td width="290" style="padding:5px;"><img src="http://development.yourzine.nl/ddk/img/template/c1.jpg"
+width="290" height="341" border="0" /></td>
+                              </tr>
+                            </table>
+                          </div>
+                        </form></td>
+                    </tr>
+                  </table>
+                </div></td>
+            </tr>
+            <tr>
+              <td height="15"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></td>
+            </tr>
+          </table>
+        </div>
+        
+        <!--[if (gte mso 9)|(IE)]></td><td valign="top"><![endif]-->
+        
+        <div style="width: 300px; display: inline-block; vertical-align: top;" >
+          <table border="0" align="center" cellpadding="0" cellspacing="0" style="width: 290px; max-width: 290px;">
+            <tr>
+              <td valign="top"><div>
+                  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td><!--[if !mso]><!-- -->
+<form class="formcheck" >
+<input type="radio" class="tabcheck" style="display:none !important;" checked>
+<div class="tabscontainer" style="height:0px;max-height:0px; overflow:hidden;">
+
+<label><input type=radio name="ASIN.1" class="tab" id="tab1" style="display:none !important;" value="B00MUQ9E7C" checked><span><div class="headtab1"></div>
+<label><input type=radio name="ASIN.1" class="tab" id="tab2" style="display:none !important;" value="B00MUQ9DVO"><span><div  class="headtab2"></div>
+
+<label><input type=radio name="ASIN.1" class="tab" id="tab3" style="display:none !important;" value="B00MUQ9DLO"><span><div  class="headtab3"></div>
+<div class="contenttab3" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td style="border:1px solid #888888">
+<img src="http://development.yourzine.nl/ddk/img/template/c1.jpg"
+width="290" height="341" border="0" />
+</td>
+</tr>
+<tr>
+<td width="100%" align="center" valign="top"
+style="padding: 16px; background: #555555; font-family: Helvetica; font-size: 15px; line-height: 100%; color: #ffffff;">
+ZWART
+</td>
+</tr>
+</table>
+</div>
+<div class="contenttab2" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td style="border:1px solid #888888">
+<img src="http://development.yourzine.nl/ddk/img/template/c2.jpg"
+width="290" height="341" border="0" />
+</td>
+</tr>
+<tr>
+<td width="100%" align="center" valign="top"
+style="padding: 16px; background: #555555; font-family: Helvetica; font-size: 15px; line-height: 100%; color: #ffffff;">
+ROOD
+</td>
+</tr>
+</table>
+</div>
+<div class="contenttab1" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td style="border:1px solid #888888">
+<img src="http://development.yourzine.nl/ddk/img/template/c3.jpg"
+width="290" height="341" border="0" />
+</td>
+</tr>
+<tr>
+<td width="100%" align="center" valign="top" style="padding: 16px; background: #555555; font-family: Helvetica; font-size: 15px; line-height: 100%; color: #ffffff;">
+WIT
+</td>
+</tr>
+</table>
+</div>
+</div>
+</form>
+<!--<![endif]-->
+                        
+                        <form class="formcheck">
+                          <!--[if !mso]><!== -->
+<input type="radio" class="tabcheck" style="display:none !important;" checked="checked" /> 
+<!--<![endif]-->
+                          <div class="fallback"> 
+                            <!-- Fallback content -->
+                            
+                            <table width="290" border="0" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td style="font-family: Arial, Helvetica, Sans-serif; font-size:12px; line-height:14px;"> Dit is de fallback, bijvoorbeeld met een gif: </td>
+                              </tr>
+                              <tr>
+                                <td width="290" style="padding:5px;"><img src="http://development.yourzine.nl/ddk/img/template/c1.jpg"
+width="290" height="341" border="0" /></td>
+                              </tr>
+                            </table>
+                          </div>
+                        </form></td>
+                    </tr>
+                  </table>
+                </div></td>
+            </tr>
+            <tr>
+              <td height="15"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></td>
+            </tr>
+          </table>
+        </div>
+        
+        <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></td>
+      <td width="10"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="10" height="1"/></td>
+    </tr>
+  </table>
+  
+  <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></td>
+</tr>
+<tr>
+<td height="30" bgcolor="#ffffff"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="30"/></td>
 </tr>
 </table>
 
