@@ -77,18 +77,18 @@ image-rendering: optimizeQuality;
 /* Hieronder staat alle CSS voor de dynamische tabs */
 .headtab1, .headtab2, .headtab3 {
 width: 35px;
-height: 25px;
+height: 35px;
 margin-bottom: 10px;
-margin-left: 20px;
+margin-right: 20px;
 background-color: #333333;
 float: left;
 display: inline;
-border: 2px solid #ffffff;
+border: 1px solid #E9E9E9;
 border-radius: 5px;
 cursor: pointer;
+list-style:none !important;
 }
 .headtab1 {
-margin-left: 20px;
 background-color: #ffffff;
 }
 .headtab2 {
@@ -109,26 +109,26 @@ transition: all 1s ease;
 opacity: 1;
 }
 #tab1:checked + span .headtab1, #tab2:checked + span .headtab2, #tab3:checked + span .headtab3 {
-height: 25px !important;
+height: 35px !important;
 border: 2px solid #aaaaaa;
 }
 form.formcheck .tabcheck:checked + .tabscontainer {
 display: block !important;
 height: 443px !important;
 max-height: 443px !important;
+list-style:none !important;
 }
 form.formcheck .tabcheck:checked + .fallback {
 display: none !important;
-display: none;
 max-height: 0px;
 height: 0px;
 overflow: hidden;
 }
 .tab, .tabcheck {
-display: none;
 display: none !important;
 height: 0px;
 visibility: hidden;
+list-style:none !important;
 }
 
 /* Container fix m.b.t. Gmail-desktop */
@@ -234,11 +234,17 @@ td[class].content
 padding-left: 10px !important;
 padding-right: 10px !important;
 }
-
 *[class].mobile-hide
 {
 display: none;
 }
+.headtab1, .headtab2, .headtab3 {
+	width:50px !important;
+	height:50px !important;
+	color: transparant !important;
+}
+#tab1:checked + span .headtab1, #tab2:checked + span .headtab2, #tab3:checked + span .headtab3 {
+	height:50px !important;
 }
 </style>
 
@@ -744,7 +750,7 @@ The point of using <a href="#" target="_blank" style="color:#585858;">Lorem Ipsu
 </table>
 
 
-<table class="wrapper" bgcolor="#f0f0f0" width="101%" border="0" cellspacing="0" cellpadding="0">
+<table class="wrapper" bgcolor="#f0f0f0" width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td height="15"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></td>
 </tr>
@@ -765,14 +771,14 @@ The point of using <a href="#" target="_blank" style="color:#585858;">Lorem Ipsu
                   <table cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
                       <td><!--[if !mso]><!-- -->
-<form class="formcheck" >
+<form class="formcheck" style="list-style:none;">
 <input type="radio" class="tabcheck" style="display:none !important;" checked>
-<div class="tabscontainer" style="height:0px;max-height:0px; overflow:hidden;">
+<div class="tabscontainer" style="height:0px;max-height:0px; overflow:hidden; list-style:none;">
 
-<label><input type=radio name="ASIN.1" class="tab" id="tab1" style="display:none !important;" value="B00MUQ9E7C" checked><span><div class="headtab1"></div>
-<label><input type=radio name="ASIN.1" class="tab" id="tab2" style="display:none !important;" value="B00MUQ9DVO"><span><div  class="headtab2"></div>
+<label><input type=radio name="ASIN.1" class="tab" id="tab1" style="display:none; list-style:none;" value="B00MUQ9E7C" checked><span style="list-style:none;"><div class="headtab1"></div>
+<label><input type=radio name="ASIN.1" class="tab" id="tab2" style="display:none; list-style:none;" value="B00MUQ9DVO"><span style="list-style:none;"><div class="headtab2"></div>
 
-<label><input type=radio name="ASIN.1" class="tab" id="tab3" style="display:none !important;" value="B00MUQ9DLO"><span><div  class="headtab3"></div>
+<label><input type=radio name="ASIN.1" class="tab" id="tab3" style="display:none; list-style:none;" value="B00MUQ9DLO"><span style="list-style:none;"><div class="headtab3"></div>
 <div class="contenttab3" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
 <table cellpadding="0" cellspacing="0">
 <tr>
@@ -826,7 +832,7 @@ WIT
                         
                         <form class="formcheck">
                           <!--[if !mso]><!== -->
-<input type="radio" class="tabcheck" style="display:none !important;" checked="checked" /> 
+<input type="radio" class="tabcheck" style="display:none; list-style-image:none;" checked="checked" /> 
 <!--<![endif]-->
                           <div class="fallback"> 
                             <!-- Fallback content -->
@@ -861,14 +867,14 @@ width="290" height="341" border="0" /></td>
                   <table cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
                       <td><!--[if !mso]><!-- -->
-<form class="formcheck" >
+<form class="formcheck" style="list-style:none;">
 <input type="radio" class="tabcheck" style="display:none !important;" checked>
-<div class="tabscontainer" style="height:0px;max-height:0px; overflow:hidden;">
+<div class="tabscontainer" style="height:0px;max-height:0px; overflow:hidden; list-style:none;">
 
-<label><input type=radio name="ASIN.1" class="tab" id="tab1" style="display:none !important;" value="B00MUQ9E7C" checked><span><div class="headtab1"></div>
-<label><input type=radio name="ASIN.1" class="tab" id="tab2" style="display:none !important;" value="B00MUQ9DVO"><span><div  class="headtab2"></div>
+<label><input type=radio name="ASIN.1" class="tab" id="tab1" style="display:none; list-style:none;" value="B00MUQ9E7C" checked><span style="list-style:none;"><div class="headtab1"></div>
+<label><input type=radio name="ASIN.1" class="tab" id="tab2" style="display:none; list-style:none;" value="B00MUQ9DVO"><span style="list-style:none;"><div class="headtab2"></div>
 
-<label><input type=radio name="ASIN.1" class="tab" id="tab3" style="display:none !important;" value="B00MUQ9DLO"><span><div  class="headtab3"></div>
+<label><input type=radio name="ASIN.1" class="tab" id="tab3" style="display:none; list-style:none;" value="B00MUQ9DLO"><span style="list-style:none;"><div class="headtab3"></div>
 <div class="contenttab3" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
 <table cellpadding="0" cellspacing="0">
 <tr>
@@ -922,7 +928,7 @@ WIT
                         
                         <form class="formcheck">
                           <!--[if !mso]><!== -->
-<input type="radio" class="tabcheck" style="display:none !important;" checked="checked" /> 
+<input type="radio" class="tabcheck" style="display:none; list-style-image:none;" checked="checked" /> 
 <!--<![endif]-->
                           <div class="fallback"> 
                             <!-- Fallback content -->
@@ -980,7 +986,7 @@ width="290" height="341" border="0" /></td>
 <td valign="top"><table cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
 <td width="10"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="10" height="1" /></td>
-<td style="font-size:14px; line-height:14px; text-align:left; width:100%;"><img src="http://development.yourzine.nl/ddk/img/template/banner.jpg"  style="width:100%; background-color: #998e83; font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, serif; font-size:28px; text-align:center; color:#ffffff; line-height:50px; vertical-align:middle;" /></td>
+<td style="font-size:14px; line-height:14px; text-align:left; width:100%;"><img src="http://development.yourzine.nl/ddk/img/template/banner.jpg"  style="width:100%; background-color: #998e83; font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, serif; font-size:28px; text-align:center; color:#ffffff; line-height:50px; vertical-align:middle; min-width:300px;" /></td>
 <td width="10"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="10" height="1"/></td>
 </tr>
 </table></td>
