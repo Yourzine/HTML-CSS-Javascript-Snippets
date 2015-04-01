@@ -10,10 +10,8 @@
 <link rel="shortcut icon" href="path/to/your/images/favicon.ico" type="image/x-icon" />
 <title>Responsive Hybrid Template</title>
 <style type="text/css">
+/* Custom fonts werken in heel veel modene clients. De Android e-mailclient, alle iOS clients, Apple Mail, Thunderbird en Outlook 2011 en 2015 (Apple versie) ondersteunen deze custom fonts. In alle overige clients zal de fallback worden getoond. Er is echter wel een outlookfallback nodig, deze staat onderaan de style-tag */
 
-/* Custom fonts werken in heel veel modene clients. De Android e-mailclient, alle iOS clients, Apple Mail, Thunderbird en Outlook 2011 en 2015 (Apple versie) ondersteunen deze custom fonts. In alle overige clients zal de fallback worden getoond. Deze onderstaande Media Screen tag is een fix zodat Outlook de fallback font kan lezen. Je hoeft dus geen additionele Outlook fixes meer toe te voegen. */
-
-@media screen { 
 @font-face {
 font-family: 'quicksandregular';
 src: url('http://development.yourzine.nl/ddk/img/template/fonts/quicksand-regular-webfont.eot');
@@ -25,7 +23,7 @@ url('http://development.yourzine.nl/ddk/img/template/fonts/quicksand-regular-web
 font-weight: normal;
 font-style: normal;
 }
-}
+
 body {
 width: 100% !important;
 margin: 0;
@@ -144,89 +142,99 @@ width: 620px !important;
 @media all and ( max-width: 599px )
 {
 
-*[id]#wrapper + table,
-*[class].container,
-*[class].menu
-{
-min-width: 0 !important;
--moz-text-size-adjust: none;
--ms-text-size-adjust: none;
--webkit-text-size-adjust: none;
+div[class="yourzinemenu"] table[class*="ftd"] > * > tr > td {
+display: block;
 width: 100% !important;
 }
-
-*[id]#mobile-label
-{
-background-color: #F3F3F3;
-
-cursor: pointer;
-display: block !important;
-float: right;
-padding: 25px;
--webkit-tap-highlight-color: transparent;
-width: 26px;
-}
-
-*[id]#mobile-label > b
-{
-background-color: #575452;
--moz-border-radius: 2px;
--webkit-border-radius: 2px;
-border-radius: 2px;
+div[class="yourzinemenu"] .fw {
+width: 100% !important;
+min-width: 0 !important;
 display: block;
-height: 4px;
 }
-
-*[id]#mobile-label > b + b
-{
-margin-top: 4px;
+div[class="yourzinemenu"] .nav td {
+background-color: #FF005A;
+height: 50px;
 }
-
-*[class].menu td
-{
-padding: 0 !important;
+div[class="yourzinemenu"] .nav td:first-child font:after {
+padding: 0px 0px 0px 15px;
+font-weight: bold;
+color: #ffffff;
 }
-
-*[id]#menu-wrapper
-{
-background-color: #004677;
-max-height: 0;
+div[class="yourzinemenu"] .nav td:first-child {
+-webkit-transition: background-position .50s -moz-transition: background-position ..50s;
+transition: background-position .50s;
+background: url('http://yz.emsecure.net/images/YOURZINE/2015/ALGEMEEN/yourzine_logo.png') left no-repeat;
+background-size: 35%;
+background-position: 10px;
+}
+div[class="yourzinemenu"] .nav td:last-child font:after {
+content: '\2261';
+font-size: 40px;
+padding: 0px 13px 0px 0px;
+font-weight: normal;
+color: #ffffff !important;
+}
+div[class="yourzinemenu"] .nav td:last-child {
+width: 50px;
+}
+div[class="yourzinemenu"] input:checked + div .content {
+max-height: 120px !important;
+}
+div[class="yourzinemenu"] input:checked + div label table td:first-child {
+background-position: 62% 50%;
+}
+div[class="yourzinemenu"] input:checked + div label .nav td:last-child font:after {
+content: '\2715';
+padding: 0px 12px 0px 0px;
+font-weight: normal;
+color: #ffffff !important;
+font-size: 30px;
+}
+div[class="yourzinemenu"] input:checked + div label table td:first-child font {
+opacity: 0;
+}
+div[class="yourzinemenu"] .content a {
+color: #ffffff !important;
+}
+div[class="yourzinemenu"] .content td td:last-child a {
+color: #333333 !important;
+}
+div[class="yourzinemenu"] .content font {
+color: #ffffff !important;
+}
+div[class="yourzinemenu"] .content table {
+background-color: #dbdbdb;
+background-position: left;
+}
+div[class="yourzinemenu"] .content {
+max-height: 0px;
 overflow: hidden;
--moz-transition: max-height .25s linear;
--ms-transition: max-height .25s linear;
--o-transition: max-height .25s linear;
--webkit-transition: max-height .25s linear;
-transition: max-height .25s linear;
+-webkit-transition: all .50s ease;
+-moz-transition: all .50s ease;
+-ms-transition: all .50s ease;
+-o-transition: all .50s ease;
+transition: all .50s ease;
 }
-
-*[id]#mobile-checkbox:checked + table #menu-wrapper
-{
-max-height: 130px;
-}
-
-*[class].menu + .menu
-{
-border-top: 1px solid #7C90AF;
-}
-*[class].hide
-{
-display: none !important;
-}
-
-*[class].menu-item
-{
-color: #FFFFFF !important;
-display: block;
-padding: 12px;
+div[class="yourzinemenu"] .mobilemenu {
+width: 100% !important;
 text-align: center;
 }
-
-*[id]#hero
-{
-font-size: 14px !important;
-height: auto !important;
-min-height: 50px !important;
+div[class="yourzinemenu"] .mobilemenutd {
 width: 100% !important;
+text-align: center;
+display: block;
+height:15px;
+border-bottom:1px solid #ffffff;
+}
+.show {
+height: auto !important;
+line-height: auto !important;
+font-size: 12px !important;
+width: auto !important;
+max-height: auto !important;
+min-height: auto !important;
+visibility: visible!important;
+display: block!important;
 }
 
 td[class].content
@@ -235,6 +243,10 @@ padding-left: 10px !important;
 padding-right: 10px !important;
 }
 *[class].mobile-hide
+{
+display: none;
+}
+*[class].hide
 {
 display: none;
 }
@@ -247,96 +259,89 @@ display: none;
 	height:50px !important;
 }
 </style>
-
+<!--Outlook-fallbackfont-fix -->
+<!--[if mso]>
+<style>
+A,SPAN,TD,DIV,P { font-family: Arial, Helvetica, sans-serif !important;}
+</style>
+<![endif]-->
 </head>
 <body>
-
 <!-- Alle blokken zitten in hun eigen wrapper. Dit heeft heel veel voordelen tijdens het developen / het doorvoeren van wijzigingen en voorkomt terugkomende problemen in Gmail en Outlook. -->
-
-<div style="background-color: #FFFFFF; vertical-align:middle">
-            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0; table-layout: fixed;" width="100%">
-                <tr>
-                    <td valign="middle">
-                        <!--[if mso]><p style="display: none;"><![endif]-->
-                            <input id="mobile-checkbox" style="display: none!important; max-height: 0; visibility: hidden;" type="checkbox">
-                        <!--[if mso]></p><![endif]-->
-                        
-                        <!--[if (gte mso 9)|(IE)]><table width="620" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]-->
-                        
-                        <table align="center" border="0" cellpadding="0" cellspacing="0" class="container" style="border-collapse: collapse; border-spacing: 0; margin: auto; max-width: 620px;" width="100%" height="50">
-                            <tr>
-                                <td valign="middle">
-                                 <label for="mobile-checkbox" id="mobile-label" style="display: none;">
-                                        <b></b>
-                                        <b></b>
-                                        <b></b>
-                                    </label>
-                                                                         <table align="left" border="0" cellpadding="10" cellspacing="0" style="border-collapse: collapse; border-spacing: 0;">
+<table bgcolor="#000000" border="0" cellpadding="0" cellspacing="0" class="wrapper" width="101%">
 <tr>
-<td>
-<a href="http://www.yourzine.nl/"><img src="http://www.yourzine.nl/site/gfx/logo.jpg" align="left" style="border:0;"></a>
-</td>
-</tr>
-</table><!--[if mso]>
-</td><td><![endif]-->
-                                    <table align="right" border="0" cellpadding="0" cellspacing="0" class="menu">
-                                        <tr>
-                                            <td valign="middle">
-                                                <div id="menu-wrapper"><!--[if mso]>
-                                                    <table border="0" cellpadding="0" cellspacing="0">
-                                                        <tr>
-                                                            <td><![endif]-->
-                                                                <table align="left" border="0" cellpadding="10" cellspacing="0" class="menu" style="border-collapse: collapse; border-spacing: 0;">
-                                                                    <tr>
-                                                                    
-    
-                                                                        <td nowrap style="font-family:Arial, sans-serif; font-size: 18px; line-height: 1; text-transform: uppercase;">
-                                                                            <a href="#" class="menu-item" style="color: #575452; line-height: 1; text-decoration: none;">lINK 1</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table><!--[if mso]>
-                                                            </td><td><![endif]-->
-                                                                <table align="left" border="0" cellpadding="10" cellspacing="0" class="menu" style="border-collapse: collapse; border-spacing: 0;">
-                                                                    <tr>
-                                                                        <td nowrap style="font-family:Arial, sans-serif; font-size: 18px; line-height: 1; text-transform: uppercase;">
-                                                                            <a href="#" class="menu-item" style="color: #575452; line-height: 1; text-decoration: none;">link 2
-                                                                            </a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table><!--[if mso]>
-                                                            </td><td><![endif]-->
-                                                                <table align="left" border="0" cellpadding="10" cellspacing="0" class="menu" style="border-collapse: collapse; border-spacing: 0;">
-                                                                    <tr>
-                                                                        <td nowrap style="font-family:Arial, sans-serif; font-size: 18px; line-height: 1; text-transform: uppercase;">
-                                                                            <a href="#" class="menu-item" style="color: #575452; line-height: 1; text-decoration: none;">liNK 3</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table><!--[if mso]>
-                                                            </td>
-                                                        </tr>
-                                                    </table><![endif]-->
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                        <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
-                    </td>
-                </tr>
-            </table>
-            
-            
-             
-            
-        </div>
+<td align="center" valign="top"><!--[if (gte mso 9)|(IE)]><table width="620" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]-->
 
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="container" style="max-width: 620px;" width="100%">
+<tr>
+<td style="font-family: 'quicksandregular', Arial, sans-serif; font-size:16px; line-height:22px; letter-spacing: .5px; color:#000001; text-align:left;" valign="top"><div class="yourzinemenu">
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="border-spacing: 0; table-layout: fixed;">
+<tr>
+<td align="center" valign="top"><div id="navwrapper"> 
+<!--[if !mso 9]><!-->
+<input id="button" type="checkbox" style="mso-hide:all; height:0; width:0; font-size:0; line-height:0; display:none !important; min-height:0; overflow:hidden; max-height:0px; visibility: hidden; outline:0; opacity:0; position:relative; margin-top:-40px; top:-40px;">
+<!--<![endif]-->
+<div> 
+<!--[if !mso 9]><!-->
+<label id="hallo" for="button" onclick>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="nav">
+<tr>
+<td align="left"><font face="Arial, Helvetica, sans-serif" style="color:#ffffff;"></font></td>
+<td align="right"><font face="Arial, Helvetica, sans-serif" style="color:#ffffff; font-size:30px;"></font></td>
+</tr>
+</table>
+</label>
+<!--<![endif]-->
+<div class="content">
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="container" style="border-collapse: collapse; border-spacing: 0; margin: auto; max-width: 660px;" width="100%" height="50" bgcolor="#000000">
+<tr> 
+<td valign="middle"><table align="left" class="hide" border="0" cellpadding="10" cellspacing="0" >
+<tr>
+<td><a href="http://www.yourzine.nl"><img src="http://yz.emsecure.net/images/YOURZINE/2015/ALGEMEEN/yourzine_logo.png" width="102" align="left" style="border:0;" class="pt2"></a></td>
+</tr>
+</table>
+
+<!--[if mso]></td><td><![endif]-->
+
+<table align="right" border="0" cellpadding="0" cellspacing="0" class="mobilemenu" style="border:0;">
+<tr>
+<td valign="middle" style="padding-top: 4px"><div id="menu-wrapper"><!--[if mso]><table border="0" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table align="left" border="0" cellpadding="10" cellspacing="0" class="mobilemenu" style="border:0;">
+<tr>
+<td  style="font-family: 'quicksandregular', Arial, sans-serif; font-size:14px;letter-spacing: 1px; line-height: 1; color:#ffffff; text-transform: uppercase; font-weight: bold" class="mobilemenutd" align="center"><center>
+<a href="#" target="_blank" style="color: #ffffff; line-height: 1; text-decoration: none; font-weight: bold; text-align:center;">Bekijk onlineversie</a>
+</center></td>
+</tr>
+</table>
+<!--[if mso]></td>
+<td><![endif]--> 
+
+<table align="left" border="0" cellpadding="10" cellspacing="0" class="mobilemenu" >
+<tr>
+<td style="font-family: 'quicksandregular', Arial, sans-serif; font-size:14px;letter-spacing: 1px; line-height: 1; color:#ffffff; text-transform: uppercase; font-weight: bold; border:0;" class="mobilemenutd" align="center" ><a href="#" target="_blank" style="color: #ffffff; line-height: 1; text-decoration: none; font-weight: bold; text-align:center;">contact</a></td>
+</tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div></td>
+</tr>
+</table></td>
+</tr>
+</table>
+</div>
+</div>
+</div></td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table>
+
+<!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></td>
+</tr>
+</table>
 
 <table class="wrapper" bgcolor="#ffffff" width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td align="center" valign="top">
-
 <!-- Iedere containertabel heeft een Outlookfallback nodig voor een correcte weergave. Hierin staat een harde breedte i.t.t. een procentuele breedte -->
 
 <!--[if (gte mso 9)|(IE)]><table width="620" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top"><![endif]-->
@@ -353,13 +358,13 @@ display: none;
 
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;"><img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
 <span style="font-size:26px; line-height:32px; color:#1a1919;" valign="top">
-<strong>Mobile responsive fluid boilerplate</strong> - v1.7
+<strong>Mobile responsive fluid boilerplate</strong> - v1.8
 </span>
 <div style="height:15px;mso-line-height-rule:exactly; line-height:15px; font-size:15px; display:block;">
 <img src="http://development.yourzine.nl/ddk/img/template/spacer.gif" width="1" height="15"/></div>
 - Basis wrapper structuur met alle benodigde optimalisaties
 <br />
-- Hamburger menu mobile (animated) <br>
+- Hamburger menu mobile (animated V2) <br>
 - Dynamische tabs met content (animated)<br />
 - Custom fonts <br />
 - Fancy HTML Button.<br />
@@ -389,7 +394,7 @@ Let op dat de breedte niet variabel is en je deze dus hard erin moet zetten in z
 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://litmus.com/pub/a828377" style="height:45px;v-text-anchor:middle; width:225px;" arcsize="14%" strokecolor="#ad00ff" fill="t">
 <v:fill type="tile" src="http://development.yourzine.nl/ddk/img/template/bgbutton.jpg" color="#ffb500"/>
 <w:anchorlock/>
-<center style="color:#ffffff;font-family: 'quicksandregular', Arial, sans-serif;font-size:16px;font-weight:bold;text-shadow: rgb(3, 3, 3) 0px 3px 4px; display:inline-block;">Klik voor de Litmustest</center>
+<center style="color:#ffffff;font-family: Arial, Helvetica,sans-serif;font-size:16px;font-weight:bold;text-shadow: rgb(3, 3, 3) 0px 3px 4px; display:inline-block;">Klik voor de Litmustest</center>
 </v:roundrect>
 <![endif]--><a href="https://litmus.com/pub/a828377"
 style="background-color:#ad00ff;background-image:url(http://development.yourzine.nl/ddk/img/template/bgbutton.jpg);border:1px solid #ad00ff;border-radius:5px;color:#ffffff;display:inline-block; font-family: 'quicksandregular', Arial, sans-serif;font-size:16px;font-weight:bold;line-height:45px;text-align:center;text-decoration:none;-webkit-text-size-adjust:none;mso-hide:all; text-shadow: rgb(3, 3, 3) 0px 1px 1px; width:225px;" target="_blank">Klik voor de Litmustest</a><br></div> 
