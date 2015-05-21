@@ -1,4 +1,4 @@
-Selligent Validation
+Selligent (Back-end) Validation
 --------------
 
 In the Data Component in the flow define what condition will be validated before the data operation is executed.
