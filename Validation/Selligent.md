@@ -12,7 +12,7 @@ Validation: length of at least 6 characters
 SIM-constraint: LEN(@PASSWORD)>5  
 
 **Confirm Password**  
-Validation: inputs have to match
+Validation: inputs have to match  
 SIM-constraint: @CONFIRM_PASSWORD=@PASSWORD  
 
 **Mail**  
