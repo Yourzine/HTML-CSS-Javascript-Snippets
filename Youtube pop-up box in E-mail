@@ -1,0 +1,108 @@
+<!--PUT THIS IN HEAD-->
+
+<style>
+/* Dialog box */
+.ui-widget-overlay.custom-overlay
+{
+   background-color: black;
+   background-image: none;
+   filter: Alpha(Opacity=45);
+   opacity: 0.45;
+}
+
+.ui-widget-header {
+   background: transparent !important;
+   border-width: 0px !important;
+}
+
+#dialog {
+   outline: 0;
+   min-height: 50px;
+   display: none;
+}
+
+.ui-button:focus { outline:none !important }
+
+#dialog p {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 14px;
+}
+</style>
+
+<!--/PUT THIS IN HEAD-->
+
+
+<!-- GIVE ID's video1, video2, etc, TO A HREF ELEMENTS THAT SHOULD CAUSE A VIDEO TO POP-UP -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="320" align="left" bgcolor="#62604b" class="topborder">
+  <tr>
+    <td align="center"><a href="~PROBE(210)~" id="video1" style="display: block; width: 320px; height: 320px;"><img src="http://eu.my-samsung.com/images/mys/sebn/nl_NL/newsletters/201608_newsletter_august/4-2a.jpg" width="320" height="320" alt="Video 1" border="0" style="display: block;" /></a></td>
+  </tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" width="320" bgcolor="#f3f3f3">
+  <tr>
+    <td align="center"><a href="~PROBE(213)~" id="video2"><img src="http://eu.my-samsung.com/images/mys/sebn/nl_NL/newsletters/201608_newsletter_august/4-2c.jpg" width="320" height="320" alt="Video 2" border="0" style="display: block;" /></a></td>
+  </tr>                                                
+</table>
+
+<!--/GIVE ID's video1, video2, etc, TO A HREF ELEMENTS THAT SHOULD CAUSE A VIDEO TO POP-UP -->
+
+
+
+<!--ADD THIS TO THE BOTTOM OF THE BODY-->
+
+<div id="MASECTION" MACONSTRAINT="SYSTEM.MAIL<>1">
+	<div id="dialog" style="background-color: #000000;">
+		<iframe id="ytplayer" type="text/html" width="640" height="390" frameborder="0"></iframe>
+	</div>
+</div>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+var popUp = ~(IF(@POPUP<>'',@POPUP,'0'))~ - 1;
+
+// Store youtube video id's in the url array, you can add as many as you like. 
+// Add autoplay=1 to enable autoplay
+var url = ["psg83rsM53c?autoplay=1&feature=youtu.be&list=PLTMmPcyVHr3KQzLjeVpN2MC9ijDcRpxwR",
+		   "FyAjsrMJS74?autoplay=1&feature=youtu.be&list=PLTMmPcyVHr3KQzLjeVpN2MC9ijDcRpxwR"];
+
+if (popUp != -1) {
+		$('#dialog').show();
+		$('#ytplayer').attr('src', 'https://www.youtube.com/embed/' + url[popUp])
+	$('[id^=video]').click(function() {
+		currentId=$(this).attr("id").slice(-1) - 1;
+		if (!$('#dialog').dialog('isOpen')){
+			$('#dialog').dialog('open');
+			$('#ytplayer').attr('src', 'https://www.youtube.com/embed/' + url[currentId])
+		}   
+		else $('#dialog').dialog('close');
+	});
+
+	$('#dialog').dialog({
+		autoOpen: true,
+		modal: true,
+		dialogClass: 'noTitle',
+		height: 'auto',
+		minHeight: 130,
+		width: 'auto',
+		open: function() {
+			$('.ui-widget-overlay').addClass('custom-overlay');
+		},
+		close: function() {
+			$('.ui-widget-overlay').removeClass('custom-overlay');
+		} 
+	});
+
+	$('.ui-dialog a, .ui-button-text').blur();
+
+	$('body').bind('click',function(e) {
+		if($('#dialog').dialog('isOpen') && !$(e.target).is('.ui-dialog, a') && !$(e.target).closest('.ui-dialog').length) {
+			$('#dialog').dialog('close');
+		}
+	});
+}
+</script>
+
+<!--/ADD THIS TO THE BOTTOM OF THE BODY-->
