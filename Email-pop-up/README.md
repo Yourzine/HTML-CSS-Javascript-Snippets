@@ -1,31 +1,10 @@
-## Synopsis
+## Pop-up with Youtube-vid in e-mail
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+This code makes Youtube video's pop-up in the email when clicked on them.
 
-## Code Example
+## Instructions
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
-
-## Motivation
-
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
-
-## Installation
-
-Provide code examples and explanations of how to get the project.
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
+-  Add the css on the top between the <style></style> tags in the head of the email.
+-  Give id's to the a-elements that should make a youtube-vid pop-up, name them video1, video2, etc.
+-  Add a link to the online version + parameters to the censors in the a elements that make the video pop-up, like this: ~PROBE(0)~&popup=1, ~PROBE(0)~&popup=2. the a element of id video1 should have the parameter &popup=1, video2 should have &popup=2 etc
+-  Add the youtube-vid id's to the array in the script on the bottom, the id is the part behind 'https://www.youtube.com/watch?v=', so for example 'psg83rsM53c'. You can add as many as you like, as long as you have the same amount of id's and parameters to correspond with them.
