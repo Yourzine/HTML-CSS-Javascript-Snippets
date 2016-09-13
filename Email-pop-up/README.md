@@ -1,6 +1,4 @@
-## Pop-up with Youtube-vid in e-mail
-
-This code makes Youtube video's pop-up in the email when clicked on them.
+## Pop-up box with Youtube-vid in e-mail
 
 ## Instructions
 
